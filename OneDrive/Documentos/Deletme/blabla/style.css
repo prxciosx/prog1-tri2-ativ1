@@ -1,0 +1,170 @@
+body > * {
+  border: 2px solid #ff003c;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+:root {
+  --grid-info-size: 230px;
+  --color-bg-hi: #1a1a1a;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0d0d0d;
+  color: white;
+}
+
+body {
+  display: grid;
+  grid-template-areas:
+    "social info content"
+    "footer footer footer";
+
+  grid-template-columns: auto var(--grid-info-size) 1fr;
+  grid-template-rows: 1fr 120px;
+
+  gap: .5rem;
+  padding: .5rem;
+  min-height: 100vh;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  grid-area: info;
+
+  background-color: #141414;
+
+  padding: 1rem;
+
+  border-radius: 10px;
+}
+
+aside .thumb {
+  width: 180px;
+  height: 180px;
+
+  background-color: gray;
+
+  border-radius: 50%;
+  overflow: hidden;
+
+  border: 3px solid #ff003c;
+
+  margin-bottom: 1rem;
+}
+
+aside .thumb img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+aside section {
+  width: 100%;
+
+  background-color: #1f1f1f;
+
+  color: #ff003c;
+
+  padding: 1rem;
+
+  border-radius: 10px;
+
+  text-align: center;
+}
+
+main {
+  grid-area: content;
+
+  background-color: #141414;
+
+  padding: 1rem;
+}
+
+main h1 {
+  margin: 0 0 2rem 0;
+
+  font-size: 4rem;
+  color: #ff003c;
+}
+
+main p {
+  color: #cccccc;
+}
+
+.gallery {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  gap: 1rem;
+
+  margin-top: 2rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: 200px;
+
+  object-fit: cover;
+
+  border: 2px solid #ff003c;
+
+  transition: 0.2s;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+.gallery :first-child {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+
+  height: 100%;
+}
+
+.social {
+  grid-area: social;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 1rem;
+}
+
+.social a {
+  background-color: #1a1a1a;
+
+  padding: .5rem;
+
+  border: 2px solid #ff003c;
+}
+
+.social img {
+  width: 2rem;
+  height: 2rem;
+}
+
+footer {
+  grid-area: footer;
+
+  background-color: #141414;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #999;
+}
